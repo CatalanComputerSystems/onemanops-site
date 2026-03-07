@@ -85,9 +85,7 @@ export default function Hero() {
               marginBottom: "24px",
             }}
           >
-            ONE <span style={{ color: "#E8530E" }}>MAN</span>
-            <br />
-            OPS
+            ONE <span style={{ color: "#E8530E" }}>MAN</span> OPS
           </h1>
         </FadeIn>
 
