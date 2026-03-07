@@ -29,6 +29,7 @@ export default function AgentCard({
         padding: "28px",
         cursor: "default",
         transition: "all 0.3s",
+        overflow: "hidden",
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.borderColor = `${color}50`;
@@ -45,9 +46,10 @@ export default function AgentCard({
           justifyContent: "space-between",
           alignItems: "flex-start",
           marginBottom: "16px",
+          gap: "12px",
         }}
       >
-        <div>
+        <div style={{ minWidth: 0 }}>
           <span style={{ fontSize: "28px", color }}>{icon}</span>
           <div
             className="font-mono"
@@ -68,10 +70,10 @@ export default function AgentCard({
             {domain} Operations
           </div>
         </div>
-        <div style={{ textAlign: "right", flexShrink: 0, maxWidth: "90px" }}>
+        <div style={{ textAlign: "right", flexShrink: 0 }}>
           <div
             className="font-display"
-            style={{ fontSize: "28px", color, lineHeight: 1 }}
+            style={{ fontSize: "24px", color, lineHeight: 1 }}
           >
             {stat}
           </div>
@@ -80,8 +82,9 @@ export default function AgentCard({
             style={{
               fontSize: "9px",
               color: "#52525B",
-              letterSpacing: "1px",
+              letterSpacing: "0.5px",
               textTransform: "uppercase",
+              whiteSpace: "nowrap",
             }}
           >
             {statLabel}
@@ -90,7 +93,12 @@ export default function AgentCard({
       </div>
       <p
         className="font-body"
-        style={{ fontSize: "14px", color: "#71717A", lineHeight: 1.6, margin: 0 }}
+        style={{
+          fontSize: "14px",
+          color: "#71717A",
+          lineHeight: 1.6,
+          margin: 0,
+        }}
       >
         {desc}
       </p>

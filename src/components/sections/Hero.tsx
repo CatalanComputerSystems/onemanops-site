@@ -5,8 +5,14 @@ import { heroStats } from "@/lib/constants";
 export default function Hero() {
   return (
     <section
-      className="relative flex flex-col justify-between overflow-hidden"
-      style={{ minHeight: "100vh", padding: "0 clamp(24px, 5vw, 80px)" }}
+      className="relative overflow-hidden"
+      style={{
+        minHeight: "100vh",
+        padding: "0 clamp(24px, 5vw, 80px)",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
     >
       {/* Grid background — 60px grid, accent at 3% */}
       <div
@@ -21,7 +27,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Scan line — 1px horizontal, accent 30%, 8s top-to-bottom */}
+      {/* Scan line */}
       <div
         className="pointer-events-none"
         style={{
@@ -30,7 +36,8 @@ export default function Hero() {
           left: 0,
           right: 0,
           height: "1px",
-          background: "linear-gradient(90deg, transparent 0%, rgba(232,83,14,0.4) 50%, transparent 100%)",
+          background:
+            "linear-gradient(90deg, transparent 0%, rgba(232,83,14,0.4) 50%, transparent 100%)",
           zIndex: 1,
           animation: "scan 8s linear infinite",
         }}
@@ -45,18 +52,24 @@ export default function Hero() {
           top: 0,
           bottom: 0,
           width: "2px",
-          background: "linear-gradient(to bottom, transparent, #E8530E, transparent)",
+          background:
+            "linear-gradient(to bottom, transparent, #E8530E, transparent)",
           opacity: 0.2,
         }}
       />
 
-      {/* Spacer top */}
-      <div className="flex-1 min-h-[80px]" />
-
-      {/* Hero content — left aligned, max-width 900px */}
+      {/* Hero content — left aligned, max-width 900px, vertically centered */}
       <div style={{ position: "relative", zIndex: 2, maxWidth: "900px" }}>
         <FadeIn>
-          <div className="font-mono text-xs tracking-[4px] text-brand-accent mb-5 uppercase">
+          <div
+            className="font-mono uppercase"
+            style={{
+              fontSize: "12px",
+              letterSpacing: "4px",
+              color: "#E8530E",
+              marginBottom: "20px",
+            }}
+          >
             <span
               className="inline-block"
               style={{ animation: "pulse-line 2s ease infinite" }}
@@ -69,14 +82,17 @@ export default function Hero() {
 
         <FadeIn delay={0.15}>
           <h1
-            className="font-display font-normal text-brand-text-primary mb-6"
+            className="font-display"
             style={{
               fontSize: "clamp(64px, 10vw, 120px)",
               lineHeight: 0.9,
+              fontWeight: 400,
               letterSpacing: "2px",
+              color: "#FAFAFA",
+              marginBottom: "24px",
             }}
           >
-            ONE <span className="text-brand-accent">MAN</span>
+            ONE <span style={{ color: "#E8530E" }}>MAN</span>
             <br />
             OPS
           </h1>
@@ -84,21 +100,24 @@ export default function Hero() {
 
         <FadeIn delay={0.3}>
           <p
-            className="font-body text-brand-text-muted font-light"
+            className="font-body"
             style={{
               fontSize: "clamp(18px, 2.2vw, 24px)",
               lineHeight: 1.6,
+              color: "#A1A1AA",
               maxWidth: "640px",
               marginBottom: "12px",
+              fontWeight: 300,
             }}
           >
             You don&apos;t need a team. You need a system.
           </p>
           <p
-            className="font-body text-brand-text-dim"
+            className="font-body"
             style={{
               fontSize: "clamp(15px, 1.6vw, 17px)",
               lineHeight: 1.7,
+              color: "#71717A",
               maxWidth: "580px",
               marginBottom: "40px",
             }}
@@ -110,7 +129,7 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.45}>
-          <div className="flex gap-4 flex-wrap">
+          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
             <GlowButton href="#tiers">DEPLOY NOW →</GlowButton>
             <GlowButton href="#agents" variant="secondary">
               VIEW AGENTS
@@ -119,26 +138,46 @@ export default function Hero() {
         </FadeIn>
       </div>
 
-      {/* Spacer — tighter gap before stats */}
-      <div className="flex-1 min-h-[40px] max-h-[80px]" />
-
-      {/* Stats bar — flows at bottom of hero, not absolute */}
-      <FadeIn delay={0.6} style={{ position: "relative", zIndex: 2, paddingBottom: "40px" }}>
+      {/* Stats bar — absolute at bottom 40px, matching reference exactly */}
+      <FadeIn
+        delay={0.6}
+        style={{
+          position: "absolute",
+          bottom: "40px",
+          left: "clamp(24px, 5vw, 80px)",
+          right: "clamp(24px, 5vw, 80px)",
+          zIndex: 2,
+        }}
+      >
         <div
-          className="flex border-t border-brand-border pt-5"
-          style={{ gap: "40px", flexWrap: "wrap" }}
+          style={{
+            display: "flex",
+            gap: "40px",
+            borderTop: "1px solid #1A1A1E",
+            paddingTop: "20px",
+            flexWrap: "wrap",
+          }}
         >
           {heroStats.map((s, i) => (
             <div key={i}>
               <div
-                className="font-display text-brand-accent"
-                style={{ fontSize: "28px", letterSpacing: "1px" }}
+                className="font-display"
+                style={{
+                  fontSize: "28px",
+                  color: "#E8530E",
+                  letterSpacing: "1px",
+                }}
               >
                 {s.val}
               </div>
               <div
-                className="font-body text-brand-text-ghost uppercase"
-                style={{ fontSize: "11px", letterSpacing: "1px" }}
+                className="font-body"
+                style={{
+                  fontSize: "11px",
+                  color: "#52525B",
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                }}
               >
                 {s.label}
               </div>
