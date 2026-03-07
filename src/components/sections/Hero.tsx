@@ -5,85 +5,61 @@ import { heroStats } from "@/lib/constants";
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden"
       style={{
+        position: "relative",
         minHeight: "100vh",
-        padding: "0 clamp(24px, 5vw, 80px)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        padding: "0 clamp(24px, 5vw, 80px)",
+        overflow: "hidden",
       }}
     >
-      {/* Grid background — 60px grid, accent at 3% */}
+      {/* Grid background */}
       <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          zIndex: 0,
-          backgroundImage: `
-            linear-gradient(rgba(232,83,14,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(232,83,14,0.03) 1px, transparent 1px)
-          `,
-          backgroundSize: "60px 60px",
-        }}
+        className="hero-grid"
+        style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }}
       />
 
       {/* Scan line */}
-      <div
-        className="pointer-events-none"
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "1px",
-          background:
-            "linear-gradient(90deg, transparent 0%, rgba(232,83,14,0.4) 50%, transparent 100%)",
-          zIndex: 1,
-          animation: "scan 8s linear infinite",
-        }}
-      />
+      <div className="hero-scanline" />
 
       {/* Accent vertical line */}
       <div
-        className="pointer-events-none"
         style={{
           position: "absolute",
           left: "clamp(24px, 5vw, 80px)",
           top: 0,
           bottom: 0,
           width: "2px",
-          background:
-            "linear-gradient(to bottom, transparent, #E8530E, transparent)",
+          background: "linear-gradient(to bottom, transparent, #E8530E, transparent)",
           opacity: 0.2,
+          pointerEvents: "none",
         }}
       />
 
-      {/* Hero content — left aligned, max-width 900px, vertically centered */}
+      {/* Hero content */}
       <div style={{ position: "relative", zIndex: 2, maxWidth: "900px" }}>
         <FadeIn>
           <div
-            className="font-mono uppercase"
             style={{
+              fontFamily: "'JetBrains Mono', monospace",
               fontSize: "12px",
               letterSpacing: "4px",
               color: "#E8530E",
               marginBottom: "20px",
+              textTransform: "uppercase",
             }}
           >
-            <span
-              className="inline-block"
-              style={{ animation: "pulse-line 2s ease infinite" }}
-            >
-              ▸
-            </span>{" "}
+            <span className="pulse-indicator" style={{ display: "inline-block" }}>▸</span>{" "}
             SYSTEM ONLINE — 5 AGENTS DEPLOYED
           </div>
         </FadeIn>
 
         <FadeIn delay={0.15}>
           <h1
-            className="font-display"
             style={{
+              fontFamily: "'Bebas Neue', sans-serif",
               fontSize: "clamp(64px, 10vw, 120px)",
               lineHeight: 0.9,
               fontWeight: 400,
@@ -100,8 +76,8 @@ export default function Hero() {
 
         <FadeIn delay={0.3}>
           <p
-            className="font-body"
             style={{
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "clamp(18px, 2.2vw, 24px)",
               lineHeight: 1.6,
               color: "#A1A1AA",
@@ -113,8 +89,8 @@ export default function Hero() {
             You don&apos;t need a team. You need a system.
           </p>
           <p
-            className="font-body"
             style={{
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "clamp(15px, 1.6vw, 17px)",
               lineHeight: 1.7,
               color: "#71717A",
@@ -122,9 +98,9 @@ export default function Hero() {
               marginBottom: "40px",
             }}
           >
-            Five AI agents. Trading. Longevity. Content. Business. Systems.
-            Built on thousands of hours of battle-tested strategies and
-            real-world validated outcomes. Deploy your unfair advantage.
+            Five AI agents. Trading. Longevity. Content. Business. Systems. Built
+            on thousands of hours of battle-tested strategies and real-world
+            validated outcomes. Deploy your unfair advantage.
           </p>
         </FadeIn>
 
@@ -138,7 +114,7 @@ export default function Hero() {
         </FadeIn>
       </div>
 
-      {/* Stats bar — absolute at bottom 40px, matching reference exactly */}
+      {/* Stats bar — absolute bottom */}
       <FadeIn
         delay={0.6}
         style={{
@@ -161,8 +137,8 @@ export default function Hero() {
           {heroStats.map((s, i) => (
             <div key={i}>
               <div
-                className="font-display"
                 style={{
+                  fontFamily: "'Bebas Neue', sans-serif",
                   fontSize: "28px",
                   color: "#E8530E",
                   letterSpacing: "1px",
@@ -171,8 +147,8 @@ export default function Hero() {
                 {s.val}
               </div>
               <div
-                className="font-body"
                 style={{
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: "11px",
                   color: "#52525B",
                   letterSpacing: "1px",

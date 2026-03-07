@@ -56,25 +56,46 @@ body {
   color: #fff;
 }
 
-/* Animations — must be outside @theme to survive Tailwind v4 processing */
-@keyframes scan {
-  0% { top: -2px; }
-  100% { top: 100vh; }
+/* ===== HERO EFFECTS ===== */
+
+/* Grid background overlay */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(232, 83, 14, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 83, 14, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
 
+/* Scan line animation — sweeps top to bottom */
+@keyframes scan {
+  0% { top: -2px; }
+  100% { top: 100%; }
+}
 
+.hero-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 10%, rgba(232, 83, 14, 0.6) 50%, transparent 90%);
+  box-shadow: 0 0 15px 2px rgba(232, 83, 14, 0.15);
+  z-index: 1;
+  pointer-events: none;
+  animation: scan 8s linear infinite;
+}
+
+/* Pulse indicator */
 @keyframes pulse-line {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 1; }
 }
 
-.animate-scan {
-  animation: scan 8s linear infinite;
-}
-
-.animate-pulse-line {
+.pulse-indicator {
   animation: pulse-line 2s ease infinite;
 }
+
+/* ===== INTERACTIVE EFFECTS ===== */
 
 /* Glow button hover */
 .glow-btn {
@@ -87,10 +108,8 @@ body {
 
 /* Tier card hover */
 .tier-card {
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 .tier-card:hover {
   transform: translateY(-4px);
 }
-
-/* Agent card hover — handled via Tailwind group */

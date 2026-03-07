@@ -21,7 +21,6 @@ export default function AgentCard({
 }: AgentCardProps) {
   return (
     <div
-      className="h-full"
       style={{
         background: "#0C0C0E",
         border: "1px solid #1A1A1E",
@@ -29,7 +28,7 @@ export default function AgentCard({
         padding: "28px",
         cursor: "default",
         transition: "all 0.3s",
-        overflow: "hidden",
+        height: "100%",
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.borderColor = `${color}50`;
@@ -46,14 +45,13 @@ export default function AgentCard({
           justifyContent: "space-between",
           alignItems: "flex-start",
           marginBottom: "16px",
-          gap: "12px",
         }}
       >
-        <div style={{ minWidth: 0 }}>
+        <div>
           <span style={{ fontSize: "28px", color }}>{icon}</span>
           <div
-            className="font-mono"
             style={{
+              fontFamily: "'JetBrains Mono', monospace",
               fontSize: "18px",
               fontWeight: 700,
               color,
@@ -64,27 +62,34 @@ export default function AgentCard({
             {callsign}
           </div>
           <div
-            className="font-body"
-            style={{ fontSize: "12px", color: "#52525B", marginTop: "2px" }}
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "12px",
+              color: "#52525B",
+              marginTop: "2px",
+            }}
           >
             {domain} Operations
           </div>
         </div>
-        <div style={{ textAlign: "right", flexShrink: 0 }}>
+        <div style={{ textAlign: "right" }}>
           <div
-            className="font-display"
-            style={{ fontSize: "24px", color, lineHeight: 1 }}
+            style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: "32px",
+              color,
+              lineHeight: 1,
+            }}
           >
             {stat}
           </div>
           <div
-            className="font-mono"
             style={{
+              fontFamily: "'JetBrains Mono', monospace",
               fontSize: "9px",
               color: "#52525B",
-              letterSpacing: "0.5px",
-              textTransform: "uppercase",
-              whiteSpace: "nowrap",
+              letterSpacing: "1px",
+              textTransform: "uppercase" as const,
             }}
           >
             {statLabel}
@@ -92,8 +97,8 @@ export default function AgentCard({
         </div>
       </div>
       <p
-        className="font-body"
         style={{
+          fontFamily: "'DM Sans', sans-serif",
           fontSize: "14px",
           color: "#71717A",
           lineHeight: 1.6,

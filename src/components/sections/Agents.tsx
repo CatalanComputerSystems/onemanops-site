@@ -7,38 +7,37 @@ export default function Agents() {
   return (
     <section
       id="agents"
-      className="border-t border-brand-section-border"
-      style={{ padding: "100px clamp(24px, 5vw, 80px)" }}
+      style={{
+        padding: "100px clamp(24px, 5vw, 80px)",
+        borderTop: "1px solid #111",
+      }}
     >
       <FadeIn>
         <SectionLabel>YOUR TEAM</SectionLabel>
         <h2
-          className="font-display text-brand-text-primary mb-12 tracking-[1px]"
-          style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }}
+          style={{
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: "clamp(36px, 5vw, 56px)",
+            color: "#FAFAFA",
+            lineHeight: 1.1,
+            marginBottom: "48px",
+            letterSpacing: "1px",
+          }}
         >
-          Five agents. Five{" "}
-          <span className="text-brand-accent">callsigns.</span>
+          Five agents. Five <span style={{ color: "#E8530E" }}>callsigns.</span>
         </h2>
       </FadeIn>
 
-      {/* All 5 agents — flex wrap, centered last row */}
+      {/* Agent grid — auto-fit with min 280px, matches reference */}
       <div
         style={{
-          display: "flex",
-          flexWrap: "wrap",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
           gap: "16px",
-          justifyContent: "center",
         }}
       >
         {agents.map((agent, i) => (
-          <FadeIn
-            key={agent.callsign}
-            delay={i * 0.08}
-            style={{
-              flex: "0 1 calc(33.333% - 11px)",
-              minWidth: "280px",
-            }}
-          >
+          <FadeIn key={agent.callsign} delay={i * 0.08}>
             <AgentCard {...agent} />
           </FadeIn>
         ))}
