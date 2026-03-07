@@ -7,24 +7,39 @@ export default function Pricing() {
   return (
     <section
       id="tiers"
-      className="border-t border-brand-section-border"
-      style={{ padding: "100px clamp(24px, 5vw, 80px)" }}
+      style={{
+        padding: "100px clamp(24px, 5vw, 80px)",
+        borderTop: "1px solid #111",
+      }}
     >
       <FadeIn>
-        <div className="text-center mb-12">
+        <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <SectionLabel>DEPLOYMENT OPTIONS</SectionLabel>
           <h2
-            className="font-display text-brand-text-primary tracking-[1px]"
-            style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }}
+            style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: "clamp(36px, 5vw, 56px)",
+              color: "#FAFAFA",
+              lineHeight: 1.1,
+              letterSpacing: "1px",
+            }}
           >
             Recon → Operator → Commander →{" "}
-            <span className="text-brand-accent">Architect</span>
+            <span style={{ color: "#E8530E" }}>Architect</span>
           </h2>
         </div>
       </FadeIn>
 
       {/* Tier Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-[1100px] mx-auto mb-16">
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: "14px",
+          maxWidth: "1100px",
+          margin: "0 auto 60px",
+        }}
+      >
         {tiers.map((tier, i) => (
           <FadeIn key={tier.name} delay={i * 0.1}>
             <TierCard
@@ -41,26 +56,64 @@ export default function Pricing() {
 
       {/* Feature Comparison Matrix */}
       <FadeIn>
-        <div className="max-w-[1100px] mx-auto">
-          <div className="font-mono text-[11px] tracking-[3px] text-brand-text-ghost mb-5 text-center">
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <div
+            style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "11px",
+              letterSpacing: "3px",
+              color: "#52525B",
+              marginBottom: "20px",
+              textAlign: "center",
+            }}
+          >
             DETAILED COMPARISON
           </div>
-          <div className="bg-brand-card rounded-[10px] border border-brand-border overflow-x-auto">
+          <div
+            style={{
+              background: "#0C0C0E",
+              borderRadius: "10px",
+              border: "1px solid #1A1A1E",
+              overflow: "hidden",
+            }}
+          >
             {/* Header */}
-            <div className="grid grid-cols-[200px_repeat(4,1fr)] min-w-[700px] border-b border-brand-border">
-              <div className="p-4" />
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "200px repeat(4, 1fr)",
+                borderBottom: "1px solid #1A1A1E",
+              }}
+            >
+              <div style={{ padding: "16px 20px" }} />
               {tiers.map((t) => (
                 <div
                   key={t.name}
-                  className="p-4 text-center border-l border-brand-border"
+                  style={{
+                    padding: "16px 14px",
+                    textAlign: "center",
+                    borderLeft: "1px solid #1A1A1E",
+                  }}
                 >
                   <div
-                    className="font-mono text-xs tracking-[2px] font-bold"
-                    style={{ color: t.color }}
+                    style={{
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: "12px",
+                      letterSpacing: "2px",
+                      color: t.color,
+                      fontWeight: 700,
+                    }}
                   >
                     {t.name}
                   </div>
-                  <div className="font-display text-[22px] text-brand-text-primary mt-0.5">
+                  <div
+                    style={{
+                      fontFamily: "'Bebas Neue', sans-serif",
+                      fontSize: "22px",
+                      color: "#FAFAFA",
+                      marginTop: "2px",
+                    }}
+                  >
                     {t.price}
                   </div>
                 </div>
@@ -70,25 +123,46 @@ export default function Pricing() {
             {features.map((feat, fi) => (
               <div
                 key={feat.name}
-                className={`grid grid-cols-[200px_repeat(4,1fr)] min-w-[700px] ${
-                  fi < features.length - 1
-                    ? "border-b border-brand-border"
-                    : ""
-                } ${fi % 2 === 0 ? "" : "bg-brand-card-alt"}`}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "200px repeat(4, 1fr)",
+                  borderBottom:
+                    fi < features.length - 1 ? "1px solid #1A1A1E" : "none",
+                  background: fi % 2 === 0 ? "transparent" : "#0A0A0C",
+                }}
               >
-                <div className="p-3.5 px-5 font-body text-[13px] text-brand-text-muted font-medium flex items-center">
+                <div
+                  style={{
+                    padding: "14px 20px",
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: "13px",
+                    color: "#A1A1AA",
+                    fontWeight: 500,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
                   {feat.name}
                 </div>
                 {feat.values.map((val, vi) => (
                   <div
                     key={vi}
-                    className={`p-3.5 text-center border-l border-brand-border font-body text-[13px] flex items-center justify-center ${
-                      val === "—"
-                        ? "text-brand-border-hover"
-                        : val === "✓"
-                        ? "text-brand-success"
-                        : "text-brand-text-body"
-                    }`}
+                    style={{
+                      padding: "14px",
+                      textAlign: "center",
+                      borderLeft: "1px solid #1A1A1E",
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "13px",
+                      color:
+                        val === "—"
+                          ? "#2A2A2E"
+                          : val === "✓"
+                          ? "#10B981"
+                          : "#D4D4D8",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
                   >
                     {val}
                   </div>

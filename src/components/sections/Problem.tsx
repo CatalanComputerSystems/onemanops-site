@@ -19,22 +19,32 @@ const withItems = [
 
 export default function Problem() {
   return (
-    <section
-      className="border-t border-brand-section-border"
-      style={{ padding: "120px clamp(24px, 5vw, 80px)" }}
-    >
+    <section style={{ padding: "120px clamp(24px, 5vw, 80px)", borderTop: "1px solid #111" }}>
       <FadeIn>
-        <div className="max-w-[800px] mx-auto text-center">
+        <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
           <SectionLabel>THE PROBLEM</SectionLabel>
           <h2
-            className="font-display text-brand-text-primary mb-6 tracking-[1px]"
-            style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }}
+            style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: "clamp(36px, 5vw, 56px)",
+              color: "#FAFAFA",
+              lineHeight: 1.1,
+              marginBottom: "24px",
+              letterSpacing: "1px",
+            }}
           >
             You&apos;re operating in{" "}
-            <span className="text-brand-accent">five domains</span> with zero
-            backup
+            <span style={{ color: "#E8530E" }}>five domains</span> with zero backup
           </h2>
-          <p className="font-body text-[17px] text-brand-text-dim leading-[1.8] mb-12">
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "17px",
+              color: "#71717A",
+              lineHeight: 1.8,
+              marginBottom: "48px",
+            }}
+          >
             Trading decisions at 2 AM. Content deadlines. Health optimization
             research. Business strategy. Prompt engineering. You&apos;re doing the
             work of five departments with one brain, one pair of hands, and 24
@@ -45,44 +55,84 @@ export default function Problem() {
       </FadeIn>
 
       <FadeIn delay={0.1}>
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-10 max-w-[900px] mx-auto items-start">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr auto 1fr",
+            gap: "40px",
+            maxWidth: "900px",
+            margin: "0 auto",
+            alignItems: "start",
+          }}
+        >
           {/* Without */}
           <div>
-            <div className="font-mono text-[11px] tracking-[3px] text-brand-danger mb-4">
+            <div
+              style={{
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: "11px",
+                letterSpacing: "3px",
+                color: "#EF4444",
+                marginBottom: "16px",
+              }}
+            >
               WITHOUT ONE MAN OPS
             </div>
             {withoutItems.map((item, i) => (
               <div
                 key={i}
-                className="font-body flex gap-2.5 mb-3 text-sm text-brand-text-dim leading-relaxed"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  display: "flex",
+                  gap: "10px",
+                  marginBottom: "12px",
+                  fontSize: "14px",
+                  color: "#71717A",
+                  lineHeight: 1.5,
+                }}
               >
-                <span className="text-brand-danger shrink-0">✗</span>
-                {item}
+                <span style={{ color: "#EF4444", flexShrink: 0 }}>✗</span> {item}
               </div>
             ))}
           </div>
 
           {/* Divider */}
           <div
-            className="hidden md:block w-px min-h-[200px] self-stretch"
             style={{
-              background:
-                "linear-gradient(to bottom, transparent, rgba(232,83,14,0.2), transparent)",
+              width: "1px",
+              background: "linear-gradient(to bottom, transparent, rgba(232,83,14,0.2), transparent)",
+              minHeight: "200px",
+              alignSelf: "stretch",
             }}
           />
 
           {/* With */}
           <div>
-            <div className="font-mono text-[11px] tracking-[3px] text-brand-success mb-4">
+            <div
+              style={{
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: "11px",
+                letterSpacing: "3px",
+                color: "#10B981",
+                marginBottom: "16px",
+              }}
+            >
               WITH ONE MAN OPS
             </div>
             {withItems.map((item, i) => (
               <div
                 key={i}
-                className="font-body flex gap-2.5 mb-3 text-sm text-brand-text-body leading-relaxed"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  display: "flex",
+                  gap: "10px",
+                  marginBottom: "12px",
+                  fontSize: "14px",
+                  color: "#D4D4D8",
+                  lineHeight: 1.5,
+                }}
               >
-                <span className="text-brand-success shrink-0">→</span>
-                {item}
+                <span style={{ color: "#10B981", flexShrink: 0 }}>→</span> {item}
               </div>
             ))}
           </div>

@@ -4,24 +4,50 @@ import SectionLabel from "../SectionLabel";
 export default function Philosophy() {
   return (
     <section
-      className="border-t border-brand-section-border text-center"
-      style={{ padding: "120px clamp(24px, 5vw, 80px)" }}
+      style={{
+        padding: "120px clamp(24px, 5vw, 80px)",
+        borderTop: "1px solid #111",
+        textAlign: "center",
+      }}
     >
       <FadeIn>
-        <div className="max-w-[700px] mx-auto">
+        <div style={{ maxWidth: "700px", margin: "0 auto" }}>
           <SectionLabel>THE PHILOSOPHY</SectionLabel>
-          <blockquote className="font-display text-[clamp(32px,4.5vw,52px)] text-brand-text-primary leading-[1.2] mb-6 tracking-[1px]">
+          <blockquote
+            style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: "clamp(32px, 4.5vw, 52px)",
+              color: "#FAFAFA",
+              lineHeight: 1.2,
+              marginBottom: "24px",
+              letterSpacing: "1px",
+            }}
+          >
             &ldquo;Whatever you are not changing, you are{" "}
-            <span className="text-brand-accent">choosing.</span>&rdquo;
+            <span style={{ color: "#E8530E" }}>choosing.</span>&rdquo;
           </blockquote>
-          <p className="font-body text-[17px] text-brand-text-dim leading-[1.8] mb-4">
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "17px",
+              color: "#71717A",
+              lineHeight: 1.8,
+              marginBottom: "16px",
+            }}
+          >
             One Man Ops isn&apos;t a product. It&apos;s a decision. A decision
             that one person, armed with the right systems, can outperform entire
             teams. That evidence beats opinion. That verification beats guessing.
-            That compounding knowledge bases beat starting from scratch every
-            day.
+            That compounding knowledge bases beat starting from scratch every day.
           </p>
-          <p className="font-body text-[15px] text-brand-text-ghost leading-[1.7]">
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "15px",
+              color: "#52525B",
+              lineHeight: 1.7,
+            }}
+          >
             Every agent is built on real outcomes — validated trades, documented
             improvements, tested frameworks. Not theory. Not vibes. Forged
             systems.

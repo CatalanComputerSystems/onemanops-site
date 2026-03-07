@@ -5,29 +5,81 @@ import { deploySteps } from "@/lib/constants";
 export default function HowItWorks() {
   return (
     <section
-      className="border-t border-brand-section-border"
-      style={{ padding: "100px clamp(24px, 5vw, 80px)" }}
+      style={{
+        padding: "100px clamp(24px, 5vw, 80px)",
+        borderTop: "1px solid #111",
+      }}
     >
       <FadeIn>
-        <div className="text-center mb-14">
+        <div style={{ textAlign: "center", marginBottom: "56px" }}>
           <SectionLabel>DEPLOYMENT</SectionLabel>
-          <h2 className="font-display text-[clamp(36px,5vw,56px)] text-brand-text-primary leading-[1.1] tracking-[1px]">
-            Three steps. <span className="text-brand-accent">Full ops.</span>
+          <h2
+            style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: "clamp(36px, 5vw, 56px)",
+              color: "#FAFAFA",
+              lineHeight: 1.1,
+              letterSpacing: "1px",
+            }}
+          >
+            Three steps. <span style={{ color: "#E8530E" }}>Full ops.</span>
           </h2>
         </div>
       </FadeIn>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[960px] mx-auto">
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "24px",
+          maxWidth: "960px",
+          margin: "0 auto",
+        }}
+      >
         {deploySteps.map((s, i) => (
           <FadeIn key={s.step} delay={i * 0.12}>
-            <div className="bg-brand-card border border-brand-border rounded-lg p-8 text-center h-full">
-              <div className="font-display text-5xl text-brand-accent opacity-30 mb-2">
+            <div
+              style={{
+                background: "#0C0C0E",
+                border: "1px solid #1A1A1E",
+                borderRadius: "8px",
+                padding: "32px",
+                textAlign: "center",
+                height: "100%",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "'Bebas Neue', sans-serif",
+                  fontSize: "48px",
+                  color: "#E8530E",
+                  opacity: 0.3,
+                  marginBottom: "8px",
+                }}
+              >
                 {s.step}
               </div>
-              <div className="font-mono text-[15px] font-bold text-brand-text-primary tracking-[1px] mb-3">
+              <div
+                style={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: "15px",
+                  fontWeight: 700,
+                  color: "#FAFAFA",
+                  letterSpacing: "1px",
+                  marginBottom: "12px",
+                }}
+              >
                 {s.title}
               </div>
-              <p className="font-body text-sm text-brand-text-dim leading-relaxed m-0">
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "14px",
+                  color: "#71717A",
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}
+              >
                 {s.desc}
               </p>
             </div>
