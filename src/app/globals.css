@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Brand Colors */
+  --color-brand-bg: #060607;
+  --color-brand-card: #0C0C0E;
+  --color-brand-card-alt: #0A0A0C;
+  --color-brand-border: #1A1A1E;
+  --color-brand-border-hover: #27272A;
+  --color-brand-accent: #E8530E;
+  --color-brand-accent-2: #FF6B2B;
+  --color-brand-text-primary: #FAFAFA;
+  --color-brand-text-body: #E4E4E7;
+  --color-brand-text-muted: #A1A1AA;
+  --color-brand-text-dim: #71717A;
+  --color-brand-text-ghost: #52525B;
+  --color-brand-text-dead: #3F3F46;
+  --color-brand-success: #10B981;
+  --color-brand-danger: #EF4444;
+  --color-brand-section-border: #111111;
+
+  /* Agent Colors */
+  --color-agent-cipher: #F59E0B;
+  --color-agent-vitals: #10B981;
+  --color-agent-broadcast: #8B5CF6;
+  --color-agent-venture: #EF4444;
+  --color-agent-architect: #06B6D4;
+
+  /* Tier Colors */
+  --color-tier-recon: #64748B;
+  --color-tier-operator: #0EA5E9;
+  --color-tier-commander: #8B5CF6;
+  --color-tier-architect: #E8530E;
+
+  /* Fonts */
+  --font-display: "Bebas Neue", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-body: "DM Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-brand-bg);
+  color: var(--color-brand-text-body);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(232, 83, 14, 0.25);
+  color: #fff;
+}
+
+/* Animations */
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes pulse-line {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.animate-scan {
+  animation: scan 8s linear infinite;
+}
+
+.animate-pulse-line {
+  animation: pulse-line 2s ease infinite;
+}
+
+/* Glow button hover */
+.glow-btn {
+  transition: all 0.3s ease;
+}
+.glow-btn:hover {
+  box-shadow: 0 0 30px rgba(232, 83, 14, 0.3), 0 0 60px rgba(232, 83, 14, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Tier card hover */
+.tier-card {
+  transition: transform 0.3s ease;
+}
+.tier-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Agent card hover — handled via Tailwind group */
