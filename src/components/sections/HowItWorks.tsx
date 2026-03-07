@@ -4,7 +4,10 @@ import { deploySteps } from "@/lib/constants";
 
 export default function HowItWorks() {
   return (
-    <section className="py-[100px] px-[clamp(24px,5vw,80px)] border-t border-brand-section-border">
+    <section
+      className="border-t border-brand-section-border"
+      style={{ padding: "100px clamp(24px, 5vw, 80px)" }}
+    >
       <FadeIn>
         <div className="text-center mb-14">
           <SectionLabel>DEPLOYMENT</SectionLabel>

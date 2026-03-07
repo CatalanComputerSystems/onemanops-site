@@ -1,6 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-brand-section-border py-8 px-[clamp(24px,5vw,80px)] flex flex-col sm:flex-row justify-between items-center gap-4">
+    <footer
+      className="border-t border-brand-section-border flex flex-col sm:flex-row justify-between items-center gap-4"
+      style={{ padding: "32px clamp(24px, 5vw, 80px)" }}
+    >
       <div>
         <div className="font-display text-xl text-brand-text-primary tracking-[2px]">
           ONE <span className="text-brand-accent">MAN</span> OPS

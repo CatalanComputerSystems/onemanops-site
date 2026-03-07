@@ -21,10 +21,7 @@ export default function AgentCard({
 }: AgentCardProps) {
   return (
     <div
-      className="group bg-brand-card border border-brand-border rounded-lg p-7 cursor-default transition-all duration-300 h-full hover:bg-opacity-50"
-      style={{
-        // Dynamic border and bg on hover via inline styles since colors are dynamic
-      }}
+      className="group bg-brand-card border border-brand-border rounded-lg p-7 cursor-default transition-all duration-300 h-full"
       onMouseEnter={(e) => {
         e.currentTarget.style.borderColor = `${color}80`;
         e.currentTarget.style.backgroundColor = `${color}08`;
@@ -34,8 +31,8 @@ export default function AgentCard({
         e.currentTarget.style.backgroundColor = "";
       }}
     >
-      <div className="flex justify-between items-start mb-4">
-        <div>
+      <div className="flex justify-between items-start mb-4 gap-3">
+        <div className="min-w-0">
           <span className="text-[28px]" style={{ color }}>
             {icon}
           </span>
@@ -49,10 +46,10 @@ export default function AgentCard({
             {domain} Operations
           </div>
         </div>
-        <div className="text-right">
+        <div className="text-right shrink-0">
           <div
-            className="font-display text-[32px] leading-none"
-            style={{ color }}
+            className="font-display leading-none"
+            style={{ color, fontSize: "clamp(24px, 3vw, 32px)" }}
           >
             {stat}
           </div>

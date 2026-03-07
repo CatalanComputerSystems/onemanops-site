@@ -19,11 +19,17 @@ const withItems = [
 
 export default function Problem() {
   return (
-    <section className="py-[120px] px-[clamp(24px,5vw,80px)] border-t border-brand-section-border">
+    <section
+      className="border-t border-brand-section-border"
+      style={{ padding: "120px clamp(24px, 5vw, 80px)" }}
+    >
       <FadeIn>
         <div className="max-w-[800px] mx-auto text-center">
           <SectionLabel>THE PROBLEM</SectionLabel>
-          <h2 className="font-display text-[clamp(36px,5vw,56px)] text-brand-text-primary leading-[1.1] mb-6 tracking-[1px]">
+          <h2
+            className="font-display text-brand-text-primary mb-6 tracking-[1px]"
+            style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }}
+          >
             You&apos;re operating in{" "}
             <span className="text-brand-accent">five domains</span> with zero
             backup

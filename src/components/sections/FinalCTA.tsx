@@ -3,7 +3,10 @@ import GlowButton from "../GlowButton";
 
 export default function FinalCTA() {
   return (
-    <section className="py-[120px] px-[clamp(24px,5vw,80px)] border-t border-brand-section-border text-center relative overflow-hidden">
+    <section
+      className="border-t border-brand-section-border text-center relative overflow-hidden"
+      style={{ padding: "120px clamp(24px, 5vw, 80px)" }}
+    >
       {/* Glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"

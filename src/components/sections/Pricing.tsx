@@ -7,12 +7,16 @@ export default function Pricing() {
   return (
     <section
       id="tiers"
-      className="py-[100px] px-[clamp(24px,5vw,80px)] border-t border-brand-section-border"
+      className="border-t border-brand-section-border"
+      style={{ padding: "100px clamp(24px, 5vw, 80px)" }}
     >
       <FadeIn>
         <div className="text-center mb-12">
           <SectionLabel>DEPLOYMENT OPTIONS</SectionLabel>
-          <h2 className="font-display text-[clamp(36px,5vw,56px)] text-brand-text-primary leading-[1.1] tracking-[1px]">
+          <h2
+            className="font-display text-brand-text-primary tracking-[1px]"
+            style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }}
+          >
             Recon → Operator → Commander →{" "}
             <span className="text-brand-accent">Architect</span>
           </h2>
@@ -20,7 +24,7 @@ export default function Pricing() {
       </FadeIn>
 
       {/* Tier Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 max-w-[1100px] mx-auto mb-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-[1100px] mx-auto mb-16">
         {tiers.map((tier, i) => (
           <FadeIn key={tier.name} delay={i * 0.1}>
             <TierCard

@@ -3,7 +3,10 @@ import SectionLabel from "../SectionLabel";
 
 export default function Philosophy() {
   return (
-    <section className="py-[120px] px-[clamp(24px,5vw,80px)] border-t border-brand-section-border text-center">
+    <section
+      className="border-t border-brand-section-border text-center"
+      style={{ padding: "120px clamp(24px, 5vw, 80px)" }}
+    >
       <FadeIn>
         <div className="max-w-[700px] mx-auto">
           <SectionLabel>THE PHILOSOPHY</SectionLabel>
