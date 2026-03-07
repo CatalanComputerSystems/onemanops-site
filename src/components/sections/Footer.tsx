@@ -40,7 +40,7 @@ export default function Footer() {
         }}
       >
         © 2026 ONE MAN OPS. ALL RIGHTS RESERVED.
-        <span style={{ display: "block", marginTop: "4px", fontSize: "9px", color: "#1A1A1E" }}>v7</span>
+        <span style={{ display: "block", marginTop: "4px", fontSize: "9px", color: "#1A1A1E" }}>v8</span>
       </div>
     </footer>
   );

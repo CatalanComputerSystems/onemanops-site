@@ -4,7 +4,16 @@ interface SectionLabelProps {
 
 export default function SectionLabel({ children }: SectionLabelProps) {
   return (
-    <div className="font-mono text-[11px] tracking-[4px] text-brand-text-ghost uppercase mb-3">
+    <div
+      style={{
+        fontFamily: "'JetBrains Mono', monospace",
+        fontSize: "11px",
+        letterSpacing: "4px",
+        color: "#52525B",
+        textTransform: "uppercase",
+        marginBottom: "12px",
+      }}
+    >
       {children}
     </div>
   );

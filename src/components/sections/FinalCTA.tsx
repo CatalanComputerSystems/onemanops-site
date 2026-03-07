@@ -60,12 +60,27 @@ export default function FinalCTA() {
             Deploy your first agent today. Free at Recon. No credit card. No
             commitment. Just capability.
           </p>
-          <GlowButton
+          <a
             href="/pricing"
-            className="text-[15px] font-bold tracking-[3px] px-12 py-[18px]"
+            className="glow-btn"
+            style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              padding: "18px 48px",
+              background: "#E8530E",
+              color: "#fff",
+              border: "none",
+              borderRadius: "4px",
+              fontSize: "15px",
+              fontWeight: 700,
+              letterSpacing: "3px",
+              cursor: "pointer",
+              display: "inline-block",
+              textDecoration: "none",
+              transition: "all 0.3s",
+            }}
           >
             DEPLOY NOW →
-          </GlowButton>
+          </a>
         </div>
       </FadeIn>
     </section>

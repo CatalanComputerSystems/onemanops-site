@@ -13,18 +13,39 @@ export default function GlowButton({
   variant = "primary",
   className = "",
 }: GlowButtonProps) {
-  const base =
-    "font-mono text-sm font-semibold tracking-[2px] rounded-[4px] cursor-pointer transition-all duration-300 inline-block text-center";
+  const base: React.CSSProperties = {
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: "14px",
+    fontWeight: 600,
+    letterSpacing: "2px",
+    borderRadius: "4px",
+    cursor: "pointer",
+    display: "inline-block",
+    textAlign: "center",
+    textDecoration: "none",
+    padding: "16px 36px",
+    transition: "all 0.3s",
+  };
 
-  const variants = {
-    primary:
-      "glow-btn bg-brand-accent text-white px-9 py-4",
-    secondary:
-      "px-9 py-4 bg-transparent text-brand-text-muted border border-brand-border-hover hover:border-brand-text-ghost",
+  const variants: Record<string, React.CSSProperties> = {
+    primary: {
+      background: "#E8530E",
+      color: "#fff",
+      border: "none",
+    },
+    secondary: {
+      background: "transparent",
+      color: "#A1A1AA",
+      border: "1px solid #27272A",
+    },
   };
 
   return (
-    <Link href={href} className={`${base} ${variants[variant]} ${className}`}>
+    <Link
+      href={href}
+      className={`glow-btn ${className}`}
+      style={{ ...base, ...variants[variant] }}
+    >
       {children}
     </Link>
   );
