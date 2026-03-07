@@ -7,7 +7,7 @@ export default function Hero() {
     <section
       style={{
         position: "relative",
-        minHeight: "100vh",
+        height: "100vh",
         overflow: "hidden",
         background: "#060607",
       }}
