@@ -13,22 +13,23 @@ export default function Agents() {
       }}
     >
       <FadeIn>
-        <SectionLabel>YOUR TEAM</SectionLabel>
-        <h2
-          style={{
-            fontFamily: "'Bebas Neue', sans-serif",
-            fontSize: "clamp(36px, 5vw, 56px)",
-            color: "#FAFAFA",
-            lineHeight: 1.1,
-            marginBottom: "48px",
-            letterSpacing: "1px",
-          }}
-        >
-          Five agents. Five <span style={{ color: "#E8530E" }}>callsigns.</span>
-        </h2>
+        <div style={{ textAlign: "center", marginBottom: "48px" }}>
+          <SectionLabel>YOUR TEAM</SectionLabel>
+          <h2
+            style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: "clamp(36px, 5vw, 56px)",
+              color: "#FAFAFA",
+              lineHeight: 1.1,
+              letterSpacing: "1px",
+            }}
+          >
+            Five agents. Five{" "}
+            <span style={{ color: "#E8530E" }}>callsigns.</span>
+          </h2>
+        </div>
       </FadeIn>
 
-      {/* Agent grid — auto-fit with min 280px, matches reference */}
       <div
         style={{
           display: "grid",
