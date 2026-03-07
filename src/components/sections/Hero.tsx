@@ -8,10 +8,8 @@ export default function Hero() {
       style={{
         position: "relative",
         minHeight: "100vh",
-        padding: "0 clamp(24px, 5vw, 80px)",
         overflow: "hidden",
-        display: "flex",
-        alignItems: "center",
+        background: "#060607",
       }}
     >
       {/* Grid background */}
@@ -43,95 +41,99 @@ export default function Hero() {
         }}
       />
 
-      {/* Hero content — vertically centered via parent align-items: center */}
+      {/* Hero content — centered vertically with absolute + transform */}
       <div
         style={{
-          position: "relative",
+          position: "absolute",
+          top: "50%",
+          transform: "translateY(-60%)",
+          left: "clamp(24px, 5vw, 80px)",
+          right: "clamp(24px, 5vw, 80px)",
           zIndex: 2,
-          maxWidth: "900px",
-          paddingBottom: "100px",
         }}
       >
-        <FadeIn>
-          <div
-            style={{
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: "12px",
-              letterSpacing: "4px",
-              color: "#E8530E",
-              marginBottom: "20px",
-              textTransform: "uppercase",
-            }}
-          >
-            <span
-              className="pulse-indicator"
-              style={{ display: "inline-block" }}
+        <div style={{ maxWidth: "900px" }}>
+          <FadeIn>
+            <div
+              style={{
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: "12px",
+                letterSpacing: "4px",
+                color: "#E8530E",
+                marginBottom: "20px",
+                textTransform: "uppercase",
+              }}
             >
-              ▸
-            </span>{" "}
-            SYSTEM ONLINE — 5 AGENTS DEPLOYED
-          </div>
-        </FadeIn>
+              <span
+                className="pulse-indicator"
+                style={{ display: "inline-block" }}
+              >
+                ▸
+              </span>{" "}
+              SYSTEM ONLINE — 5 AGENTS DEPLOYED
+            </div>
+          </FadeIn>
 
-        <FadeIn delay={0.15}>
-          <h1
-            style={{
-              fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: "clamp(64px, 10vw, 120px)",
-              lineHeight: 0.9,
-              fontWeight: 400,
-              letterSpacing: "2px",
-              color: "#FAFAFA",
-              marginBottom: "24px",
-            }}
-          >
-            ONE <span style={{ color: "#E8530E" }}>MAN</span> OPS
-          </h1>
-        </FadeIn>
+          <FadeIn delay={0.15}>
+            <h1
+              style={{
+                fontFamily: "'Bebas Neue', sans-serif",
+                fontSize: "clamp(64px, 10vw, 120px)",
+                lineHeight: 0.9,
+                fontWeight: 400,
+                letterSpacing: "2px",
+                color: "#FAFAFA",
+                marginBottom: "24px",
+                whiteSpace: "nowrap",
+              }}
+            >
+              ONE <span style={{ color: "#E8530E" }}>MAN</span> OPS
+            </h1>
+          </FadeIn>
 
-        <FadeIn delay={0.3}>
-          <p
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "clamp(18px, 2.2vw, 24px)",
-              lineHeight: 1.6,
-              color: "#A1A1AA",
-              maxWidth: "640px",
-              marginBottom: "12px",
-              fontWeight: 300,
-            }}
-          >
-            You don&apos;t need a team. You need a system.
-          </p>
-          <p
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "clamp(15px, 1.6vw, 17px)",
-              lineHeight: 1.7,
-              color: "#71717A",
-              maxWidth: "580px",
-              marginBottom: "40px",
-            }}
-          >
-            Five AI agents. Trading. Longevity. Content. Business. Systems.
-            Built on thousands of hours of battle-tested strategies and
-            real-world validated outcomes. Deploy your unfair advantage.
-          </p>
-        </FadeIn>
+          <FadeIn delay={0.3}>
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "clamp(18px, 2.2vw, 24px)",
+                lineHeight: 1.6,
+                color: "#A1A1AA",
+                maxWidth: "640px",
+                marginBottom: "12px",
+                fontWeight: 300,
+              }}
+            >
+              You don&apos;t need a team. You need a system.
+            </p>
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "clamp(15px, 1.6vw, 17px)",
+                lineHeight: 1.7,
+                color: "#71717A",
+                maxWidth: "580px",
+                marginBottom: "40px",
+              }}
+            >
+              Five AI agents. Trading. Longevity. Content. Business. Systems.
+              Built on thousands of hours of battle-tested strategies and
+              real-world validated outcomes. Deploy your unfair advantage.
+            </p>
+          </FadeIn>
 
-        <FadeIn delay={0.45}>
-          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-            <GlowButton href="#tiers">DEPLOY NOW →</GlowButton>
-            <GlowButton href="#agents" variant="secondary">
-              VIEW AGENTS
-            </GlowButton>
-          </div>
-        </FadeIn>
+          <FadeIn delay={0.45}>
+            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+              <GlowButton href="#tiers">DEPLOY NOW →</GlowButton>
+              <GlowButton href="#agents" variant="secondary">
+                VIEW AGENTS
+              </GlowButton>
+            </div>
+          </FadeIn>
+        </div>
       </div>
 
-      {/* Stats bar */}
-      <FadeIn
-        delay={0.6}
+      {/* Stats bar — absolute at bottom */}
+      <div
         style={{
           position: "absolute",
           bottom: "40px",
@@ -175,7 +177,7 @@ export default function Hero() {
             </div>
           ))}
         </div>
-      </FadeIn>
+      </div>
     </section>
   );
 }
