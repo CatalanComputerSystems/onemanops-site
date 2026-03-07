@@ -56,11 +56,12 @@ body {
   color: #fff;
 }
 
-/* Animations */
+/* Animations — must be outside @theme to survive Tailwind v4 processing */
 @keyframes scan {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
+  0% { top: -2px; }
+  100% { top: 100vh; }
 }
+
 
 @keyframes pulse-line {
   0%, 100% { opacity: 0.3; }

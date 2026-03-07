@@ -5,43 +5,56 @@ import { heroStats } from "@/lib/constants";
 export default function Hero() {
   return (
     <section
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
-      style={{ padding: "0 clamp(24px, 5vw, 80px)" }}
+      className="relative flex flex-col justify-between overflow-hidden"
+      style={{ minHeight: "100vh", padding: "0 clamp(24px, 5vw, 80px)" }}
     >
-      {/* Grid background */}
+      {/* Grid background — 60px grid, accent at 3% */}
       <div
-        className="absolute inset-0 z-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
+          zIndex: 0,
           backgroundImage: `
-            linear-gradient(rgba(232,83,14,0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(232,83,14,0.05) 1px, transparent 1px)
+            linear-gradient(rgba(232,83,14,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(232,83,14,0.03) 1px, transparent 1px)
           `,
           backgroundSize: "60px 60px",
         }}
       />
 
-      {/* Scan line */}
+      {/* Scan line — 1px horizontal, accent 30%, 8s top-to-bottom */}
       <div
-        className="absolute left-0 right-0 z-[1] pointer-events-none"
+        className="pointer-events-none"
         style={{
-          height: "2px",
-          background: "linear-gradient(90deg, transparent, rgba(232,83,14,0.4), transparent)",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "1px",
+          background: "linear-gradient(90deg, transparent 0%, rgba(232,83,14,0.4) 50%, transparent 100%)",
+          zIndex: 1,
           animation: "scan 8s linear infinite",
         }}
       />
 
       {/* Accent vertical line */}
       <div
-        className="absolute top-0 bottom-0 pointer-events-none"
+        className="pointer-events-none"
         style={{
+          position: "absolute",
           left: "clamp(24px, 5vw, 80px)",
+          top: 0,
+          bottom: 0,
           width: "2px",
           background: "linear-gradient(to bottom, transparent, #E8530E, transparent)",
           opacity: 0.2,
         }}
       />
 
-      <div className="relative z-[2] max-w-[900px]">
+      {/* Spacer top */}
+      <div className="flex-1 min-h-[80px]" />
+
+      {/* Hero content — left aligned, max-width 900px */}
+      <div style={{ position: "relative", zIndex: 2, maxWidth: "900px" }}>
         <FadeIn>
           <div className="font-mono text-xs tracking-[4px] text-brand-accent mb-5 uppercase">
             <span
@@ -71,14 +84,24 @@ export default function Hero() {
 
         <FadeIn delay={0.3}>
           <p
-            className="font-body text-brand-text-muted max-w-[640px] mb-3 font-light"
-            style={{ fontSize: "clamp(18px, 2.2vw, 24px)", lineHeight: 1.6 }}
+            className="font-body text-brand-text-muted font-light"
+            style={{
+              fontSize: "clamp(18px, 2.2vw, 24px)",
+              lineHeight: 1.6,
+              maxWidth: "640px",
+              marginBottom: "12px",
+            }}
           >
             You don&apos;t need a team. You need a system.
           </p>
           <p
-            className="font-body text-brand-text-dim max-w-[580px] mb-10"
-            style={{ fontSize: "clamp(15px, 1.6vw, 17px)", lineHeight: 1.7 }}
+            className="font-body text-brand-text-dim"
+            style={{
+              fontSize: "clamp(15px, 1.6vw, 17px)",
+              lineHeight: 1.7,
+              maxWidth: "580px",
+              marginBottom: "40px",
+            }}
           >
             Five AI agents. Trading. Longevity. Content. Business. Systems.
             Built on thousands of hours of battle-tested strategies and
@@ -96,21 +119,27 @@ export default function Hero() {
         </FadeIn>
       </div>
 
-      {/* Stats bar */}
-      <FadeIn
-        className="absolute bottom-10"
-        style={{
-          left: "clamp(24px, 5vw, 80px)",
-          right: "clamp(24px, 5vw, 80px)",
-        }}
-      >
-        <div className="flex gap-10 border-t border-brand-border pt-5 flex-wrap">
+      {/* Spacer — tighter gap before stats */}
+      <div className="flex-1 min-h-[40px] max-h-[80px]" />
+
+      {/* Stats bar — flows at bottom of hero, not absolute */}
+      <FadeIn delay={0.6} style={{ position: "relative", zIndex: 2, paddingBottom: "40px" }}>
+        <div
+          className="flex border-t border-brand-border pt-5"
+          style={{ gap: "40px", flexWrap: "wrap" }}
+        >
           {heroStats.map((s, i) => (
             <div key={i}>
-              <div className="font-display text-[28px] text-brand-accent tracking-[1px]">
+              <div
+                className="font-display text-brand-accent"
+                style={{ fontSize: "28px", letterSpacing: "1px" }}
+              >
                 {s.val}
               </div>
-              <div className="font-body text-[11px] text-brand-text-ghost tracking-[1px] uppercase">
+              <div
+                className="font-body text-brand-text-ghost uppercase"
+                style={{ fontSize: "11px", letterSpacing: "1px" }}
+              >
                 {s.label}
               </div>
             </div>

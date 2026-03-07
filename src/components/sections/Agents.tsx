@@ -21,36 +21,25 @@ export default function Agents() {
         </h2>
       </FadeIn>
 
-      {/* Top row: 3 cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
-        {agents.slice(0, 3).map((agent, i) => (
-          <FadeIn key={agent.callsign} delay={i * 0.08}>
-            <AgentCard
-              callsign={agent.callsign}
-              domain={agent.domain}
-              icon={agent.icon}
-              color={agent.color}
-              desc={agent.desc}
-              stat={agent.stat}
-              statLabel={agent.statLabel}
-            />
-          </FadeIn>
-        ))}
-      </div>
-
-      {/* Bottom row: 2 cards, centered */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[calc(66.666%+8px)] mx-auto">
-        {agents.slice(3).map((agent, i) => (
-          <FadeIn key={agent.callsign} delay={(i + 3) * 0.08}>
-            <AgentCard
-              callsign={agent.callsign}
-              domain={agent.domain}
-              icon={agent.icon}
-              color={agent.color}
-              desc={agent.desc}
-              stat={agent.stat}
-              statLabel={agent.statLabel}
-            />
+      {/* All 5 agents — flex wrap, centered last row */}
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "16px",
+          justifyContent: "center",
+        }}
+      >
+        {agents.map((agent, i) => (
+          <FadeIn
+            key={agent.callsign}
+            delay={i * 0.08}
+            style={{
+              flex: "0 1 calc(33.333% - 11px)",
+              minWidth: "280px",
+            }}
+          >
+            <AgentCard {...agent} />
           </FadeIn>
         ))}
       </div>
