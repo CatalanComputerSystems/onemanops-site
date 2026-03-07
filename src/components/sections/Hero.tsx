@@ -8,17 +8,21 @@ export default function Hero() {
       style={{
         position: "relative",
         minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
         padding: "0 clamp(24px, 5vw, 80px)",
         overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
       }}
     >
       {/* Grid background */}
       <div
         className="hero-grid"
-        style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }}
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 0,
+          pointerEvents: "none",
+        }}
       />
 
       {/* Scan line */}
@@ -32,14 +36,22 @@ export default function Hero() {
           top: 0,
           bottom: 0,
           width: "2px",
-          background: "linear-gradient(to bottom, transparent, #E8530E, transparent)",
+          background:
+            "linear-gradient(to bottom, transparent, #E8530E, transparent)",
           opacity: 0.2,
           pointerEvents: "none",
         }}
       />
 
-      {/* Hero content */}
-      <div style={{ position: "relative", zIndex: 2, maxWidth: "900px" }}>
+      {/* Hero content — vertically centered via parent align-items: center */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 2,
+          maxWidth: "900px",
+          paddingBottom: "100px",
+        }}
+      >
         <FadeIn>
           <div
             style={{
@@ -51,7 +63,12 @@ export default function Hero() {
               textTransform: "uppercase",
             }}
           >
-            <span className="pulse-indicator" style={{ display: "inline-block" }}>▸</span>{" "}
+            <span
+              className="pulse-indicator"
+              style={{ display: "inline-block" }}
+            >
+              ▸
+            </span>{" "}
             SYSTEM ONLINE — 5 AGENTS DEPLOYED
           </div>
         </FadeIn>
@@ -98,9 +115,9 @@ export default function Hero() {
               marginBottom: "40px",
             }}
           >
-            Five AI agents. Trading. Longevity. Content. Business. Systems. Built
-            on thousands of hours of battle-tested strategies and real-world
-            validated outcomes. Deploy your unfair advantage.
+            Five AI agents. Trading. Longevity. Content. Business. Systems.
+            Built on thousands of hours of battle-tested strategies and
+            real-world validated outcomes. Deploy your unfair advantage.
           </p>
         </FadeIn>
 
@@ -114,7 +131,7 @@ export default function Hero() {
         </FadeIn>
       </div>
 
-      {/* Stats bar — absolute bottom */}
+      {/* Stats bar */}
       <FadeIn
         delay={0.6}
         style={{

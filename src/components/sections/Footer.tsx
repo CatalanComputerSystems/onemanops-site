@@ -14,7 +14,7 @@ export default function Footer() {
       </div>
       <div className="font-mono text-[11px] text-brand-border-hover tracking-[1px]">
         © 2026 ONE MAN OPS. ALL RIGHTS RESERVED.
-        <span style={{ display: "block", marginTop: "4px", fontSize: "9px", color: "#1A1A1E" }}>v5</span>
+        <span style={{ display: "block", marginTop: "4px", fontSize: "9px", color: "#1A1A1E" }}>v6</span>
       </div>
     </footer>
   );
