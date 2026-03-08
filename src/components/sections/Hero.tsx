@@ -79,13 +79,13 @@ export default function Hero() {
             <h1
               style={{
                 fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: "clamp(64px, 10vw, 120px)",
+                fontSize: "clamp(80px, 12vw, 140px)",
                 lineHeight: 0.9,
                 fontWeight: 400,
                 letterSpacing: "2px",
                 color: "#FAFAFA",
                 marginBottom: "24px",
-                whiteSpace: "nowrap",
+                whiteSpace: "normal",
               }}
             >
               ONE <span style={{ color: "#E8530E" }}>MAN</span> OPS

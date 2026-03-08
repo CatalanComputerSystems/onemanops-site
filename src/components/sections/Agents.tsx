@@ -13,7 +13,7 @@ export default function Agents() {
       }}
     >
       <FadeIn>
-        <div style={{ textAlign: "center", marginBottom: "48px" }}>
+        <div style={{ textAlign: "left", marginBottom: "48px" }}>
           <SectionLabel>YOUR TEAM</SectionLabel>
           <h2
             style={{
@@ -36,7 +36,6 @@ export default function Agents() {
           gridTemplateColumns: "repeat(2, 1fr)",
           gap: "16px",
           maxWidth: "720px",
-          margin: "0 auto",
         }}
       >
         {agents.map((agent, i) => (
