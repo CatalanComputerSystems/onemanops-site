@@ -41,17 +41,16 @@ export default function Hero() {
         }}
       />
 
-      {/* Hero content — centered both vertically and horizontally */}
+      {/* Hero content — left-aligned, vertically centered */}
       <div
         style={{
           position: "absolute",
           top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -60%)",
-          width: "90%",
-          maxWidth: "900px",
+          left: "clamp(24px, 5vw, 80px)",
+          transform: "translateY(-60%)",
+          maxWidth: "700px",
           zIndex: 2,
-          textAlign: "center",
+          textAlign: "left",
         }}
       >
         <div>
@@ -101,7 +100,7 @@ export default function Hero() {
                 lineHeight: 1.6,
                 color: "#A1A1AA",
                 maxWidth: "640px",
-                margin: "0 auto 12px",
+                margin: "0 0 12px",
                 fontWeight: 300,
               }}
             >
@@ -114,7 +113,7 @@ export default function Hero() {
                 lineHeight: 1.7,
                 color: "#71717A",
                 maxWidth: "580px",
-                margin: "0 auto 40px",
+                margin: "0 0 40px",
               }}
             >
               Five AI agents. Trading. Longevity. Content. Business. Systems.
@@ -124,7 +123,7 @@ export default function Hero() {
           </FadeIn>
 
           <FadeIn delay={0.45}>
-            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center" }}>
+            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
               <GlowButton href="#tiers">DEPLOY NOW →</GlowButton>
               <GlowButton href="#agents" variant="secondary">
                 VIEW AGENTS
@@ -142,7 +141,7 @@ export default function Hero() {
           left: "clamp(24px, 5vw, 80px)",
           right: "clamp(24px, 5vw, 80px)",
           zIndex: 2,
-          textAlign: "center",
+          textAlign: "left",
         }}
       >
         <div
@@ -151,8 +150,7 @@ export default function Hero() {
             gap: "40px",
             borderTop: "1px solid #1A1A1E",
             paddingTop: "20px",
-            flexWrap: "wrap",
-            justifyContent: "center",
+            flexWrap: "nowrap",
           }}
         >
           {heroStats.map((s, i) => (
