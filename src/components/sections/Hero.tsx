@@ -79,7 +79,7 @@ export default function Hero() {
             <h1
               style={{
                 fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: "clamp(80px, 12vw, 140px)",
+                fontSize: "clamp(100px, 16vw, 200px)",
                 lineHeight: 0.9,
                 fontWeight: 400,
                 letterSpacing: "2px",
