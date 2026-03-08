@@ -65,12 +65,12 @@ export default function FinalCTA() {
             className="glow-btn"
             style={{
               fontFamily: "'JetBrains Mono', monospace",
-              padding: "18px 48px",
+              padding: "22px 64px",
               background: "#E8530E",
               color: "#fff",
               border: "none",
-              borderRadius: "4px",
-              fontSize: "15px",
+              borderRadius: "8px",
+              fontSize: "16px",
               fontWeight: 700,
               letterSpacing: "3px",
               cursor: "pointer",

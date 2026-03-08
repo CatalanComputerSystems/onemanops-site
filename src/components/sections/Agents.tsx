@@ -33,8 +33,10 @@ export default function Agents() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gridTemplateColumns: "repeat(2, 1fr)",
           gap: "16px",
+          maxWidth: "720px",
+          margin: "0 auto",
         }}
       >
         {agents.map((agent, i) => (

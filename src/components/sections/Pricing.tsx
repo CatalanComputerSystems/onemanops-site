@@ -14,7 +14,7 @@ export default function Pricing() {
     >
       <FadeIn>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
-          <SectionLabel>DEPLOYMENT OPTIONS</SectionLabel>
+          <SectionLabel>CHOOSE YOUR LEVEL</SectionLabel>
           <h2
             style={{
               fontFamily: "'Bebas Neue', sans-serif",
