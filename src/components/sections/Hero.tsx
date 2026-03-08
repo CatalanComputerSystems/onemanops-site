@@ -79,7 +79,7 @@ export default function Hero() {
             <h1
               style={{
                 fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: "clamp(100px, 16vw, 200px)",
+                fontSize: "clamp(80px, 12vw, 140px)",
                 lineHeight: 0.9,
                 fontWeight: 400,
                 letterSpacing: "2px",
@@ -88,7 +88,9 @@ export default function Hero() {
                 whiteSpace: "normal",
               }}
             >
-              ONE <span style={{ color: "#E8530E" }}>MAN</span> OPS
+              ONE <span style={{ color: "#E8530E" }}>MAN</span>
+              <br />
+              OPS
             </h1>
           </FadeIn>
 

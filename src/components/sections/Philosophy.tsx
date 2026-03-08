@@ -23,7 +23,8 @@ export default function Philosophy() {
               letterSpacing: "1px",
             }}
           >
-            &ldquo;Whatever you are not changing, you are{" "}
+            &ldquo;Whatever you are not changing, you are
+            <br />
             <span style={{ color: "#E8530E" }}>choosing.</span>&rdquo;
           </blockquote>
           <p
